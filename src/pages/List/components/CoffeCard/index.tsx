@@ -1,29 +1,33 @@
 import { Card } from "../../../../components/Card"
+import { InputQuantity } from "../../../../components/Quantity"
+import { TextS, TitleM, TitleS } from "../../../../components/Text"
 import { Tag } from "../Tag"
+import { CoffeImage, PurchaseItem } from "./styles"
+import expresso from '../../../../assets/coffe/expresso.png';
 
 export const CoffeCard = () => {
     return (
         <Card>
-            <div>
-                image
-            </div>
+            <CoffeImage><img src={expresso} /></CoffeImage>
             <div>
                 <Tag text='Tradicional'></Tag>
             </div>
             <div>
-                <span>Expresso tradicional</span>
-                <p>O tradicional café feito com água quente e grãos moídos</p>
+                <TitleS>Expresso tradicional</TitleS>
+                <p>
+                    <TextS>
+                        O tradicional café feito com água quente e grãos moídos
+                    </TextS>
+                </p>
             </div>
-            <div>
+            <PurchaseItem>
                 <div>
-                    <span>R$</span>
-                    <span>9,90</span>
+                    <TextS>R$</TextS>
+                    <TitleM>9,90</TitleM>
                 </div>
-                <div>
-                    <span> - 1 + </span>
-                    <span>cart</span>
-                </div>
-            </div>
+                <InputQuantity></InputQuantity>
+                <span>cart</span>
+            </PurchaseItem>
         </Card>
     )
 }

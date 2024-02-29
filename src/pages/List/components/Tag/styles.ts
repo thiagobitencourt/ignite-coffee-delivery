@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TagLabel = styled.span`
     color: ${props => props.theme['yellow-dark']};

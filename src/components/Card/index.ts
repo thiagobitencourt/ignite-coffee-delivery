@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
     background-color:${p => p.theme['base-card']};
-    border-radius: 6px;
+    border-radius: ${props => props.theme.radius};
     border-top-right-radius: 36px;
     border-bottom-left-radius: 36px;
 
@@ -11,6 +11,7 @@ export const Card = styled.div`
 
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     align-items: center;
     text-align: center;
 `;
