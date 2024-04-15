@@ -4,6 +4,7 @@ import { TextS, TitleM, TitleS } from "../../../../components/Text"
 import { Tag } from "../Tag"
 import { CoffeImage, PurchaseItem } from "./styles"
 import expresso from '../../../../assets/coffe/expresso.png';
+import { Cart } from "../../../../components/Cart"
 
 export const CoffeCard = () => {
     return (
@@ -26,7 +27,7 @@ export const CoffeCard = () => {
                     <TitleM>9,90</TitleM>
                 </div>
                 <InputQuantity></InputQuantity>
-                <span>cart</span>
+                <Cart />
             </PurchaseItem>
         </Card>
     )
