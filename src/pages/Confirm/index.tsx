@@ -1,14 +1,16 @@
-import { TextL } from "../../components/Text";
-import { ConfirmTitle, ConfirmationPanel, DeliveryInfoCard } from "./styles";
-import deliveryImgSrc from '../../assets/delivery.png';
 import { CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react";
+import { TextL } from "../../components/Text";
+import { ColoredIcon, ConfirmTitle, ConfirmationPanel, DeliveryInfoCard, DeliveryInfoItem, PageContainer } from "./styles";
+import { defaultTheme } from '../../styles/themes/default';
+import deliveryImgSrc from '../../assets/delivery.png';
 
 export const Confirm = () => {
+    const iconSize = 16;
     const address = 'Rua João Daniel Martinelli, 102';
     const city = 'Farrapos - Porto Alegre, RS';
 
     return (
-        <div>
+        <PageContainer>
             <h2>
                 <ConfirmTitle>Uhu! Pedido confirmado</ConfirmTitle>
             </h2>
@@ -17,24 +19,36 @@ export const Confirm = () => {
             </p>
             <ConfirmationPanel>
                 <DeliveryInfoCard>
-                    <div>
-                        <MapPin size={22} weight="fill" />
-                        Entrega em <b>{address}</b>
-                        <p>{city}</p>
-                    </div>
-                    <div>
-                        <Timer size={22} weight="fill" />
-                        Previsão de entrega
-                        <p><b>20 min - 30 min</b></p>
-                    </div>
-                    <div>
-                        <CurrencyDollar size={32} />
-                        Pagamento an entrega
-                        <p><b>Cartão de Crédito</b></p>
-                    </div>
+                    <DeliveryInfoItem>
+                        <ColoredIcon color={defaultTheme.purple}>
+                            <MapPin size={iconSize} weight="fill" />
+                        </ColoredIcon>
+                        <div>
+                            Entrega em <b>{address}</b>
+                            <p>{city}</p>
+                        </div>
+                    </DeliveryInfoItem>
+                    <DeliveryInfoItem>
+                        <ColoredIcon color={defaultTheme.yellow}>
+                            <Timer size={iconSize} weight="fill" />
+                        </ColoredIcon>
+                        <div>
+                            Previsão de entrega
+                            <p><b>20 min - 30 min</b></p>
+                        </div>
+                    </DeliveryInfoItem>
+                    <DeliveryInfoItem>
+                        <ColoredIcon color={defaultTheme['yellow-dark']}>
+                            <CurrencyDollar size={iconSize} />
+                        </ColoredIcon>
+                        <div>
+                            Pagamento an entrega
+                            <p><b>Cartão de Crédito</b></p>
+                        </div>
+                    </DeliveryInfoItem>
                 </DeliveryInfoCard>
                 <img src={deliveryImgSrc} />
             </ConfirmationPanel>
-        </div>
+        </PageContainer>
     );
 }
